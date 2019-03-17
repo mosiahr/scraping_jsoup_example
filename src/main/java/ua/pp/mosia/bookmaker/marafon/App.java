@@ -25,8 +25,17 @@ public class App {
 		List<String> links = scrapPage.getLinks();
 		for (String link : links) {
 			System.out.println(link);
-			ScraperItem scraperItem = new ScraperItem(link);
-			System.out.println(scraperItem.getNameEvent());
+			Game scrapGame = new Game(link);
+			System.out.println("Game: " + scrapGame.getName());
+//			System.out.println(scraperEvent.getFirstPlayer());
+//			System.out.println(scraperEvent.getSecondPlayer());
+//			scraperEvent.getTableMatchResult();
+//			scraperEvent.scrapingEvent();
+			List<Event> events = scrapGame.scrapEvent();
+			for (Event event : events) {
+				System.out.println(event.toString());
+			}
+			System.out.println();
 		}
 	}
 }
